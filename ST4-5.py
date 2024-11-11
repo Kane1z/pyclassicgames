@@ -96,6 +96,24 @@ while ini == True:
                     combobraker = 0
 
 
+        for linha in range(2, TAM):
+            for col in range(TAM - 3):
+                combobraker = 0
+                for ver in range(4):# vou desenhar o limitador que o prof fez no quadro
+                    #print(f" linha [{linha-ver}] coluna[{col+ver}]")
+
+                    if tabuleiro[linha - ver][col + ver] == char:
+                        #print(f" linha [{linha - ver}] coluna[{col + ver}]") #colunas onde foi achado o padrao
+                        combobraker += 1
+                    else:
+                        break
+                if (combobraker == 4):
+                    ini = False
+                    if (char == 'X'):
+                        print("Jogador 1 venceu!")
+                    else:
+                        print("Jogador 2 venceu!")
+                    break
     else:
         print("Coluna não existe!")
 #aquela repticao de codigo basica para mostrar o tabuleiro no final
